@@ -1,0 +1,408 @@
+@import "tailwindcss";
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+[data-theme="dark"] {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  --accent: #c084fc;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+input {
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 10px;
+  background-color: var(--bg);
+  color: var(--text-h);
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* csss  practice */
+
+/* 🔥 grid (FLEX) */
+
+.dashboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar content"
+    "footer footer";
+  border: 2px solid red;
+  height: 100vh;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: #2e303a;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: green;
+}
+.content {
+  grid-area: content;
+  background: #000;
+}
+.footer {
+  grid-area: footer;
+  background: #aa3bff;
+}
+
+/* position  */
+
+.position-container {
+  position: relative;
+  border: 2px solid red;
+  height: 3000px;
+}
+
+.relative-box {
+  width: 200px;
+  height: 200px;
+  background: green;
+  position: relative;
+  top: 100px;
+  left: 20px;
+  color: white;
+}
+.absolute-box {
+  width: 200px;
+  height: 200px;
+  background: blue;
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+}
+.absolute-box {
+  width: 200px;
+  height: 200px;
+  background: orangered;
+  position: fixed;
+  color: white;
+  top: 0;
+  left: 50%;
+}
+.position-btn-fixed {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid orangered;
+  background-color: orange;
+  color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.sticky-box {
+  position: sticky;
+  background: #aa3bff;
+  top: 0;
+}
+
+/* dashboard positon */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  transform: translateZ(0); /* ❌ BUG 1 */
+  margin-top: 400px;
+}
+
+.sidebar {
+  width: 250px;
+  background: lightgray;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  background: white;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  top: 0;
+  background: greenyellow;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  border: 1px solid red;
+  padding: 20px;
+  overflow: hidden; /* ❌ BUG 3 */
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  background: white;
+  border: 1px solid black;
+  z-index: 999;
+  /* display: none; */
+}
+
+.card:hover .dropdown {
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  background: black;
+  color: white;
+  padding: 5px;
+}
+
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.layout {
+  display: flex;
+  margin-top: 200px;
+}
+
+.sidebar-1 {
+  width: 250px;
+}
+
+.content-1 {
+  flex: 1;
+  /* min-width: 0; */
+}
+
+.animation-btn {
+  padding: 10px 12px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  background: #000;
+ animation: pulse 1.5s ease infinite;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
+.animation-btn:hover {
+  transform: translateY(-5px);
+}
+
+.animation-card {
+  border: 2px solid grey;
+  border-radius: 8px;
+  padding: 10px;
+  transition:
+    box-shadow,
+    0.3s ease,
+    transform 0.3s ease;
+}
+
+.animation-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: scale(1.025);
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.box {
+  animation: fadeIn 0.5s ease;
+  width: 200px;
+  height: 200px;
+  border: 2px solid red;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: black;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.skelton {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    90deg,
+    #eee 25%,
+    #ddd 50%,
+    #eee 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    background-position: -200% 0;
+  }
+}
