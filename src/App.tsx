@@ -31,7 +31,9 @@ import PostWithNestedComments from "./components/machine-coding/PostWithNestedCo
 import Tictactoe from "./components/machine-coding/Tictactoe";
 import MatchSimilarTiles from "./components/machine-coding/MatchSimilarTiles";
 import ConfigDrivenForm from "./components/machine-coding/ConfigDrivenForm";
-import Toast from "./components/machine-coding/Toast";
+import ToastContainer from "./components/machine-coding/ToastProvider/ToastContainer";
+import Users from "./components/machine-coding/ToastProvider/User";
+import { ToastProvider } from "./context/toastContext";
 
 function App() {
   const windowSize = UseWindows();
@@ -72,7 +74,7 @@ function App() {
                 { path: "tic-tac-toe", element: <Tictactoe /> },
                 { path: "match-similar-tiles", element: <MatchSimilarTiles /> },
                 { path: "config-driven-form", element: <ConfigDrivenForm /> },
-                { path: "toast", element: <Toast /> },
+                { path: "toast", element: <Users /> },
               ],
             },
           ],
@@ -93,9 +95,18 @@ function App() {
   ]);
   return (
     <Provider store={store}>
-      <UseContext>
-        <RouterProvider router={router} />
-      </UseContext>
+      return (
+      <Provider store={store}>
+        <ToastProvider>
+          <UseContext>
+            <>
+              <RouterProvider router={router} />
+              <ToastContainer />
+            </>
+          </UseContext>
+        </ToastProvider>
+      </Provider>
+      );
     </Provider>
   );
 }
