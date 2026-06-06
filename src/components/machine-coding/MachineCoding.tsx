@@ -30,6 +30,10 @@ const machineCodingRoutes = [
     path: "/machine-coding/toast",
     label: "Toast",
   },
+  {
+    path: "/machine-coding/nested-folder",
+    label: "Nested Folder",
+  },
 ];
 
 const MachineCoding = () => {

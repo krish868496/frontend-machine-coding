@@ -34,6 +34,7 @@ import ConfigDrivenForm from "./components/machine-coding/ConfigDrivenForm";
 import ToastContainer from "./components/machine-coding/ToastProvider/ToastContainer";
 import Users from "./components/machine-coding/ToastProvider/User";
 import { ToastProvider } from "./context/toastContext";
+import NestedFolder from "./components/machine-coding/NestedFolder";
 
 function App() {
   const windowSize = UseWindows();
@@ -75,6 +76,7 @@ function App() {
                 { path: "match-similar-tiles", element: <MatchSimilarTiles /> },
                 { path: "config-driven-form", element: <ConfigDrivenForm /> },
                 { path: "toast", element: <Users /> },
+                { path: "nested-folder", element: <NestedFolder /> },
               ],
             },
           ],
@@ -95,8 +97,6 @@ function App() {
   ]);
   return (
     <Provider store={store}>
-      return (
-      <Provider store={store}>
         <ToastProvider>
           <UseContext>
             <>
@@ -105,8 +105,6 @@ function App() {
             </>
           </UseContext>
         </ToastProvider>
-      </Provider>
-      );
     </Provider>
   );
 }

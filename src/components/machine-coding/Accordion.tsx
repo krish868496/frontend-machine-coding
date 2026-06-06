@@ -20,10 +20,10 @@ const faqData = [
 ];
 
 const Accordion = () => {
-  const [activeTab, setActiveTab] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<Record<number, boolean>>({});
 
   const handleToggle = (id: number) => {
-    setActiveTab((prev) => prev === id ? null : id);
+    setActiveTab((prev) => ({...prev, [id]: !prev[id]}));
   };
 
   return (
@@ -34,7 +34,7 @@ const Accordion = () => {
 
       <div className="max-w-2xl mx-auto space-y-4">
         {faqData.map((faq) => {
-          const isOpen = activeTab === faq.id;
+          const isOpen = activeTab[faq.id] || false;
 
           return (
             <div

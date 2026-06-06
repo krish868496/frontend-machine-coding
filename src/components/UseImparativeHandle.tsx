@@ -1,18 +1,19 @@
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
 
-function Parent() {
+const Parent = () => {
   const childRef = useRef();
 
   return (
     <>
       <Child ref={childRef} />
-      <button onClick={() => childRef.current.focusInput()}>Focus Input</button>
+      <button onClick={() => childRef.current.focusInput()}>focus</button>
     </>
   );
-}
+};
 
 const Child = forwardRef((props, ref) => {
   const inputRef = useRef();
+
   useImperativeHandle(ref, () => ({
     focusInput() {
       inputRef.current.focus();
