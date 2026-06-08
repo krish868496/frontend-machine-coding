@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "label": "Frontend",
+    "checked": false,
+    "children": [
+      {
+        "id": 2,
+        "label": "React",
+        "checked": false,
+        "children": [
+          {
+            "id": 3,
+            "label": "Hooks",
+            "checked": false,
+            "children": [
+              {
+                "id": 113,
+                "label": "Hooks s",
+                "checked": false
+              },
+              {
+                "id": 24,
+                "label": "Context API s",
+                "checked": false
+              },
+              {
+                "id": 35,
+                "label": "Redux s",
+                "checked": false
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "label": "Context API",
+            "checked": false
+          },
+          {
+            "id": 5,
+            "label": "Redux",
+            "checked": false
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "label": "Angular",
+        "checked": false
+      },
+      {
+        "id": 7,
+        "label": "Vue",
+        "checked": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "label": "Backend",
+    "checked": false,
+    "children": [
+      {
+        "id": 9,
+        "label": "Node.js",
+        "checked": false,
+        "children": [
+          {
+            "id": 10,
+            "label": "Express",
+            "checked": false
+          },
+          {
+            "id": 11,
+            "label": "NestJS",
+            "checked": false
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "label": "Java",
+        "checked": false
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "label": "Database",
+    "checked": false,
+    "children": [
+      {
+        "id": 14,
+        "label": "MongoDB",
+        "checked": false
+      },
+      {
+        "id": 15,
+        "label": "PostgreSQL",
+        "checked": false
+      }
+    ]
+  }
+]

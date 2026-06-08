@@ -34,6 +34,10 @@ const machineCodingRoutes = [
     path: "/machine-coding/nested-folder",
     label: "Nested Folder",
   },
+  {
+    path: "/machine-coding/nested-checkbox",
+    label: "Nested Checkbox",
+  },
 ];
 
 const MachineCoding = () => {

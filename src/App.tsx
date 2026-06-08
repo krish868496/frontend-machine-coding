@@ -35,6 +35,7 @@ import ToastContainer from "./components/machine-coding/ToastProvider/ToastConta
 import Users from "./components/machine-coding/ToastProvider/User";
 import { ToastProvider } from "./context/toastContext";
 import NestedFolder from "./components/machine-coding/NestedFolder";
+import NestedCheckbox from "./components/machine-coding/NestedCheckbox";
 
 function App() {
   const windowSize = UseWindows();
@@ -77,6 +78,7 @@ function App() {
                 { path: "config-driven-form", element: <ConfigDrivenForm /> },
                 { path: "toast", element: <Users /> },
                 { path: "nested-folder", element: <NestedFolder /> },
+                { path: "nested-checkbox", element: <NestedCheckbox /> },
               ],
             },
           ],

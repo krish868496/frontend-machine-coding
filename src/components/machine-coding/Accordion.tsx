@@ -23,7 +23,7 @@ const Accordion = () => {
   const [activeTab, setActiveTab] = useState<Record<number, boolean>>({});
 
   const handleToggle = (id: number) => {
-    setActiveTab((prev) => ({...prev, [id]: !prev[id]}));
+    setActiveTab((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   return (
@@ -63,7 +63,6 @@ const Accordion = () => {
           );
         })}
       </div>
-
     </div>
   );
 };
