@@ -38,6 +38,14 @@ const machineCodingRoutes = [
     path: "/machine-coding/nested-checkbox",
     label: "Nested Checkbox",
   },
+  {
+    path: "/machine-coding/otp-input",
+    label: "Otp Input",
+  },
+  {
+    path: "/machine-coding/auto-complete",
+    label: "Auto Complete",
+  },
 ];
 
 const MachineCoding = () => {

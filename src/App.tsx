@@ -36,6 +36,8 @@ import Users from "./components/machine-coding/ToastProvider/User";
 import { ToastProvider } from "./context/toastContext";
 import NestedFolder from "./components/machine-coding/NestedFolder";
 import NestedCheckbox from "./components/machine-coding/NestedCheckbox";
+import OtpInput from "./components/machine-coding/OtpInput";
+import AutoComplete from "./components/machine-coding/AutoComplete";
 
 function App() {
   const windowSize = UseWindows();
@@ -79,6 +81,8 @@ function App() {
                 { path: "toast", element: <Users /> },
                 { path: "nested-folder", element: <NestedFolder /> },
                 { path: "nested-checkbox", element: <NestedCheckbox /> },
+                { path: "otp-input", element: <OtpInput /> },
+                { path: "auto-complete", element: <AutoComplete /> },
               ],
             },
           ],
@@ -99,14 +103,14 @@ function App() {
   ]);
   return (
     <Provider store={store}>
-        <ToastProvider>
-          <UseContext>
-            <>
-              <RouterProvider router={router} />
-              <ToastContainer />
-            </>
-          </UseContext>
-        </ToastProvider>
+      <ToastProvider>
+        <UseContext>
+          <>
+            <RouterProvider router={router} />
+            <ToastContainer />
+          </>
+        </UseContext>
+      </ToastProvider>
     </Provider>
   );
 }
